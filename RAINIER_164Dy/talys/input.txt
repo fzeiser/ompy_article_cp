@@ -1,7 +1,0 @@
-projectile p
-element dy
-mass 164
-energy 10
-outpopulation y
-bins 54
-maxlevelstar 19
