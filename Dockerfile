@@ -25,6 +25,7 @@ RUN [ "/bin/bash", "-c", "apt-get install -y libblas{3,-dev} liblapack{3,-dev} c
 
 # Needed for latex support of a font in Matplotlib in the notebook
 RUN ["/bin/bash", "-c", "apt-get install -y dvipng texlive-latex-extra texlive-fonts-recommended"]
+RUN ["/bin/bash", "-c", "apt-get install -y cm-super"]
 
 RUN yes | pip install pymultinest
 RUN git clone https://github.com/JohannesBuchner/MultiNest.git
@@ -39,3 +40,4 @@ COPY --chown=1000:100 . this_repo
 RUN cd this_repo/ompy &&\
     # git submodule update --init --recursive &&\ # now in hooks/post_checkout
     pip install -e .
+
