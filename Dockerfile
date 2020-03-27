@@ -24,7 +24,7 @@ RUN [ "/bin/bash", "-c", "apt-get install -y libblas{3,-dev} liblapack{3,-dev} c
 # Didn't find this, but not necessary: batlas{3-base,-dev}
 
 # Needed for latex support of a font in Matplotlib in the notebook
-RUN ["/bin/bash", "-c", "apt-get install -y dvipng"]
+RUN ["/bin/bash", "-c", "apt-get install -y dvipng texlive-latex-extra texlive-fonts-recommended"]
 
 RUN yes | pip install pymultinest
 RUN git clone https://github.com/JohannesBuchner/MultiNest.git
