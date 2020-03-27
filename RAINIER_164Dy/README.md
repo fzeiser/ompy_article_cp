@@ -1,0 +1,18 @@
+Files:
+- `1Gen.m`: resulting first-generation matrix of the RAINIER simulation readable to Oslo-Method software
+- `create_gsf.py`: Creates gsf according to the parametrization of Renstrom2018 et al.
+- `create_nld.py`: Creates nld according to the parametrization of Renstrom2018 et al.
+- `ExEg.m`: resulting all-generations matrix of the RAINIER simulation readable to Oslo-Method software
+- `gsf.dat`: "created" input gsf (RAINIER readable format)
+- `gsf.txt`: "created" input gsf (plain text readable format)
+- `input.RAINIER`: heloer file to run RAINIER on with several cores
+- `Js2RAINER.txt`: helper file -- "created" population file for RAINIER in the continuum region
+- `levels_Dy164_synthetic.txt`: first N ≃ 80 levels in RAINIER (see header)
+- `mylevels_z066.dat`: discrete levels used in RAINIER (needed to be adopted as some levels had erroneous branching rations -- they have been *ad hock* fixed)
+- `NLDcont.dat`: resulting = produced level density from RAINIER
+- `nld.dat`: "created" input nld (RAINIER readable format)
+- `Param0001.dat`: saved parameters from run
+- `pop.dat`: "created" population file for RAINIER: combined for the discrete and the continuum region
+- `population`: More files related to creating the populations file `Js2RAINER` and `pop.dat`
+- `Run0001.root`: results from RAINIER as a root file
+- `settings.h`: all setting for the RAINIER run
