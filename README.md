@@ -9,7 +9,7 @@
 
 Link to article: [add when published]
 
-If you want to try the package before installation, you may simply [click here](https://mybinder.org/v2/gh/oslocyclotronlab/ompy/master?filepath=ompy%2Fnotebooks%2Fgetting_started.ipynb) to launch it on Binder. Note the cpu limitations probably will restrict to what extend you can rerun the analysis online. However, the attached `Dockerfile` can be used to easily set up the analysis on any machine.
+If you want to try the package before installation, you may simply [click here](https://mybinder.org/v2/gh/oslocyclotronlab/ompy/master?filepath=ompy%2Fnotebooks%2Fgetting_started.ipynb) to launch it on Binder. Note the cpu limitations probably will restrict to what extend you can rerun the analysis online. However, the attached `Dockerfile` can be used to easily set up the analysis on any machine. Please note also that sometimes MyBinder takes a long time to start up or for some calculations. You may sometimes have to wait a little and/or restart the kernel and/or whole repo.
 
 **Original Runtime**:  approx 5 min on 51 vCPUs (type `N1` from the google cloud)
 
