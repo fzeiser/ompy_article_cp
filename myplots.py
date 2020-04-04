@@ -3,6 +3,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import ompy as om
+from matplotlib.legend_handler import HandlerTuple
+from matplotlib.collections import PolyCollection
+
 
 def ensemble_plot(ensemble, *, ax = None, vmin = None, vmax = None,
                   add_cbar = True, **kwargs):
@@ -76,4 +79,51 @@ def ensemble_plot(ensemble, *, ax = None, vmin = None, vmax = None,
     return fig, ax
 
 
+class HandlerTupleVertical(HandlerTuple):
+    """Plots all the given Lines vertical stacked."""
 
+    def __init__(self, **kwargs):
+        """Run Base Handler."""
+        HandlerTuple.__init__(self, **kwargs)
+        self.base = HandlerTuple(**kwargs)
+
+    def create_artists(self, legend, orig_handle,
+                       xdescent, ydescent, width, height, fontsize, trans):
+        """Create artists (the symbol) for legend entry."""
+        # How many lines are there.
+        numlines = len(orig_handle)
+        handler_map = legend.get_legend_handler_map()
+
+        # divide the vertical space where the lines will go
+        # into equal parts based on the number of lines
+        height_y = (height / numlines)
+
+        leglines = []
+        for i, handle in enumerate(orig_handle):
+            containspoly = False
+            try:
+                for subhandle in handle:
+                    if isinstance(subhandle, PolyCollection):
+                        containspoly = True
+                        break
+            except Exception:
+                pass
+            
+            if containspoly:
+                handler = self.base
+                legline = handler.create_artists(legend, handle,
+                                             xdescent,
+                                             0*height,
+                                             width,
+                                             height,
+                                             fontsize, trans)
+            else:
+                handler = legend.get_legend_handler(handler_map, handle)
+                legline = handler.create_artists(legend, handle,
+                                             xdescent,
+                                             (3*i + 1)*height_y,
+                                             width,
+                                             2*height,
+                                             fontsize, trans)
+            leglines.extend(legline)
+        return leglines
