@@ -5,6 +5,8 @@
 
 `ompy` is the Oslo method implementation in python. It contains all the functionality needed to go from a raw coincidence matrix, via unfolding and the first-generation method, to fitting a level density and gamma-ray strength function. It also supports uncertainty propagation by Monte Carlo. The repository for `ompy` can be found [here](https://github.com/oslocyclotronlab/ompy) and is included as a [submodule](https://www.atlassian.com/git/tutorials/git-submodule) in this repository.
 
+Note that you may have to run `git submodule update --init --recursive` to download ompy, and build it using `python setup.py build_ext --inplace` in the `ompy` directory. See [ompy respository](https://github.com/oslocyclotronlab/ompy) for more details.
+
 **Here we provide the notebooks used for the analysis in the article introducing OMpy.** A list of the files follows below.
 
 Link to article: [add when published]
